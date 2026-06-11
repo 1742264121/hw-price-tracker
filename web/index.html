@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>硬件价格追踪</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    min-height: 100vh;
+    color: #e0e0e0;
+  }
+  .header {
+    text-align: center;
+    padding: 28px 20px 16px;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .header h1 { font-size: 24px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .header .sub { font-size: 13px; color: #8b8f9e; }
+  .header .update-time { font-size: 11px; color: #666; margin-top: 6px; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+  .category-tabs {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;
+    justify-content: center;
+  }
+  .category-tabs button {
+    padding: 8px 20px; border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px; background: rgba(255,255,255,0.06);
+    color: #a0a4b0; cursor: pointer; font-size: 13px;
+    transition: all 0.2s;
+  }
+  .category-tabs button:hover { border-color: rgba(255,255,255,0.35); color: #ddd; }
+  .category-tabs button.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-color: transparent; color: #fff;
+  }
+
+  .chart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+    gap: 18px;
+  }
+  .chart-card {
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px; border: 1px solid rgba(255,255,255,0.08);
+    padding: 16px; overflow: hidden;
+  }
+  .chart-card h3 {
+    font-size: 14px; font-weight: 500; color: #c8cde0;
+    margin-bottom: 8px; padding-left: 4px;
+  }
+  .chart-card .chart { width: 100%; height: 320px; }
+
+  .footer {
+    text-align: center; padding: 30px;
+    font-size: 12px; color: #555;
+  }
+  .footer a { color: #667eea; text-decoration: none; }
+
+  .loading {
+    text-align: center; padding: 60px;
+    font-size: 16px; color: #888;
+  }
+
+  .no-data {
+    text-align: center; padding: 80px 20px;
+  }
+  .no-data p { color: #666; font-size: 14px; }
+
+  @media (max-width: 600px) {
+    .chart-grid { grid-template-columns: 1fr; }
+    .chart-card .chart { height: 260px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>硬件价格追踪</h1>
+  <p class="sub">数据来源：ZOL中关村在线 · 每周二/周五自动更新</p>
+  <p class="update-time" id="updateTime">加载中...</p>
+</div>
+
+<div class="container">
+  <div class="category-tabs" id="tabs"></div>
+  <div class="chart-grid" id="charts"></div>
+  <div class="loading" id="loading">正在加载价格数据...</div>
+</div>
+
+<div class="footer">
+  <p>Powered by <a href="https://github.com" target="_blank">GitHub Actions</a> · 更新时间：北京时间 00:00</p>
+</div>
+
+<script>
+(async function() {
+  const CATEGORIES = ['GPU', 'CPU', 'RAM', 'SSD', 'MB'];
+  const CATEGORY_NAMES = { GPU: '显卡', CPU: 'CPU', RAM: '内存', SSD: '固态硬盘', MB: '主板' };
+  const CATEGORY_COLORS = { GPU: '#667eea', CPU: '#43e97b', RAM: '#f093fb', SSD: '#ff922b', MB: '#4dabf7' };
+
+  let allData = [];
+  let products = [];
+  let currentCategory = 'GPU';
+
+  // ====== 加载数据 ======
+  async function loadAllData() {
+    try {
+      // 加载产品清单
+      const pResp = await fetch('../products.json');
+      products = await pResp.json();
+
+      // 加载所有月份的数据文件
+      // 先从 2026-06 开始尝试，向前扩展到有数据为止
+      const now = new Date();
+      const months = [];
+      for (let y = 2026; y >= 2025; y--) {
+        for (let m = 12; m >= 1; m--) {
+          const key = `${y}-${String(m).padStart(2, '0')}`;
+          // 不超过当前月份
+          const year = now.getFullYear();
+          const month = now.getMonth() + 1;
+          if (y > year || (y === year && m > month)) continue;
+          months.push(key);
+        }
+      }
+      // 限制回溯月份数
+      months.splice(36);
+
+      for (const month of months.slice(0, 12)) {
+        try {
+          const resp = await fetch(`../data/${month}.json`);
+          if (!resp.ok) continue;
+          const json = await resp.json();
+          allData.push(...json.records);
+        } catch (e) {
+          // 文件不存在，继续
+        }
+      }
+
+      // 按日期排序
+      allData.sort((a, b) => a.date.localeCompare(b.date));
+
+    } catch (e) {
+      console.error('加载数据失败:', e);
+    }
+  }
+
+  // ====== 渲染 ======
+  function renderTabs() {
+    const tabsEl = document.getElementById('tabs');
+    tabsEl.innerHTML = CATEGORIES.map(cat => {
+      const count = products.filter(p => p.category === cat).length;
+      return `<button class="${cat === currentCategory ? 'active' : ''}" 
+               onclick="switchCategory('${cat}')">
+              ${CATEGORY_NAMES[cat]} (${count})
+            </button>`;
+    }).join('');
+  }
+
+  function switchCategory(cat) {
+    currentCategory = cat;
+    renderTabs();
+    renderCharts();
+  }
+  window.switchCategory = switchCategory;
+
+  function renderCharts() {
+    document.getElementById('loading').style.display = 'none';
+    const chartsEl = document.getElementById('charts');
+
+    if (allData.length === 0) {
+      chartsEl.innerHTML = '<div class="no-data"><p>暂无数据，请等待首次采集完成后刷新</p></div>';
+      return;
+    }
+
+    const categoryProducts = products.filter(p => p.category === currentCategory);
+    
+    // 收集该品类所有产品的日期-价格序列
+    const productSeries = {};
+    const allDates = new Set();
+
+    for (const record of allData) {
+      for (const price of record.prices) {
+        const prod = categoryProducts.find(p => p.id === price.id);
+        if (!prod) continue;
+
+        if (!productSeries[price.id]) {
+          productSeries[price.id] = {
+            name: price.name || prod.name,
+            dates: [],
+            jd_prices: [],
+            zol_prices: [],
+          };
+        }
+
+        // 使用京东价为主，参考价为辅
+        const displayPrice = price.jd_price || price.zol_price;
+        if (displayPrice === null || displayPrice === undefined) continue;
+
+        productSeries[price.id].dates.push(record.date);
+        productSeries[price.id].jd_prices.push(price.jd_price);
+        productSeries[price.id].zol_prices.push(price.zol_price);
+        allDates.add(record.date);
+      }
+    }
+
+    const sortedDates = Array.from(allDates).sort();
+
+    // 为每个产品生成一个图表卡片
+    let html = '';
+    for (const pid of Object.keys(productSeries)) {
+      const series = productSeries[pid];
+      if (series.dates.length < 2) continue; // 至少2个点才能画线
+      html += `<div class="chart-card">
+        <h3>${series.name}</h3>
+        <div class="chart" id="chart-${pid}"></div>
+      </div>`;
+    }
+
+    if (!html) {
+      html = '<div class="no-data"><p>该分类暂无足够数据（需要至少2次采集记录）</p></div>';
+    }
+
+    chartsEl.innerHTML = html;
+
+    // 初始化每个图表
+    for (const pid of Object.keys(productSeries)) {
+      const series = productSeries[pid];
+      if (series.dates.length < 2) continue;
+
+      const chartDom = document.getElementById(`chart-${pid}`);
+      if (!chartDom) continue;
+
+      const chart = echarts.init(chartDom);
+
+      const seriesData = [];
+      
+      // 京东价线
+      if (series.jd_prices.some(p => p !== null && p !== undefined)) {
+        // 过滤掉 null 值，但保留索引用于 x 轴对齐
+        const jdData = series.dates.map((d, i) => {
+          const val = series.jd_prices[i];
+          return val !== null && val !== undefined ? val : null;
+        });
+        seriesData.push({
+          name: '京东价',
+          type: 'line',
+          data: jdData,
+          smooth: true,
+          symbol: 'circle',
+          symbolSize: 6,
+          lineStyle: { color: '#ff6b6b', width: 2.5 },
+          itemStyle: { color: '#ff6b6b' },
+          connectNulls: false,
+        });
+      }
+
+      // ZOL参考价线
+      if (series.zol_prices.some(p => p !== null && p !== undefined)) {
+        const zolData = series.dates.map((d, i) => {
+          const val = series.zol_prices[i];
+          return val !== null && val !== undefined ? val : null;
+        });
+        seriesData.push({
+          name: 'ZOL参考价',
+          type: 'line',
+          data: zolData,
+          smooth: true,
+          symbol: 'diamond',
+          symbolSize: 5,
+          lineStyle: { color: '#4dabf7', width: 2, type: 'dashed' },
+          itemStyle: { color: '#4dabf7' },
+          connectNulls: false,
+        });
+      }
+
+      const option = {
+        tooltip: {
+          trigger: 'axis',
+          backgroundColor: 'rgba(20,20,40,0.92)',
+          borderColor: 'rgba(255,255,255,0.1)',
+          textStyle: { color: '#e0e0e0', fontSize: 12 },
+          formatter: function(params) {
+            let s = `<b style="font-size:13px">${params[0].axisValue}</b><br/>`;
+            for (const p of params) {
+              if (p.value !== null) {
+                s += `${p.marker} ${p.seriesName}: <b>¥${p.value}</b><br/>`;
+              }
+            }
+            return s;
+          }
+        },
+        legend: {
+          data: seriesData.map(s => s.name),
+          bottom: 0,
+          textStyle: { color: '#999', fontSize: 11 },
+        },
+        grid: { left: '10%', right: '8%', top: 12, bottom: 36 },
+        xAxis: {
+          type: 'category',
+          data: series.dates,
+          boundaryGap: false,
+          axisLine: { lineStyle: { color: 'rgba(255,255,255,0.15)' } },
+          axisTick: { show: false },
+          axisLabel: { color: '#888', fontSize: 10, rotate: 30 },
+          splitLine: { show: false },
+        },
+        yAxis: {
+          type: 'value',
+          name: '价格 (元)',
+          nameTextStyle: { color: '#888', fontSize: 10 },
+          axisLabel: {
+            color: '#888', fontSize: 10,
+            formatter: '¥{value}',
+          },
+          splitLine: { lineStyle: { color: 'rgba(255,255,255,0.06)' } },
+        },
+        series: seriesData,
+      };
+
+      chart.setOption(option);
+
+      // 响应式
+      window.addEventListener('resize', () => chart.resize());
+    }
+
+    // 更新最后更新时间
+    const lastDate = allData.length > 0 ? allData[allData.length - 1].date : '未知';
+    document.getElementById('updateTime').textContent = `最后更新: ${lastDate}`;
+  }
+
+  // ====== 启动 ======
+  await loadAllData();
+  renderTabs();
+  renderCharts();
+})();
+</script>
+
+</body>
+</html>

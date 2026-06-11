@@ -1,0 +1,100 @@
+[
+  {
+    "id": "rtx5070",
+    "name": "NVIDIA RTX 5070",
+    "category": "GPU",
+    "zol_url": "/vga/index2118119.shtml",
+    "note": "公版"
+  },
+  {
+    "id": "rtx5060ti-gigabyte",
+    "name": "技嘉 RTX 5060 Ti GAMING OC 16G",
+    "category": "GPU",
+    "zol_url": "/vga/index2130983.shtml",
+    "note": ""
+  },
+  {
+    "id": "rtx5090",
+    "name": "NVIDIA RTX 5090",
+    "category": "GPU",
+    "zol_url": "/vga/index2118113.shtml",
+    "note": "旗舰卡皇"
+  },
+  {
+    "id": "r7-9800x3d",
+    "name": "AMD Ryzen 7 9800X3D",
+    "category": "CPU",
+    "zol_url": "/cpu/index2113342.shtml",
+    "note": "游戏神U"
+  },
+  {
+    "id": "i5-14600kf",
+    "name": "Intel 酷睿 i5-14600KF",
+    "category": "CPU",
+    "zol_url": "/cpu/index1929615.shtml",
+    "note": ""
+  },
+  {
+    "id": "i7-14700k",
+    "name": "Intel 酷睿 i7-14700K",
+    "category": "CPU",
+    "zol_url": "/cpu/index1814492.shtml",
+    "note": ""
+  },
+  {
+    "id": "ddr5-6000-32g-kingston",
+    "name": "金士顿 Renegade 32GB(16G*2) DDR5 6000",
+    "category": "RAM",
+    "zol_url": "/memory/index1948453.shtml",
+    "note": ""
+  },
+  {
+    "id": "ddr5-6000-32g-gskill",
+    "name": "芝奇 幻锋戟 32GB(2x16GB) DDR5 6000",
+    "category": "RAM",
+    "zol_url": "/memory/index1395770.shtml",
+    "note": ""
+  },
+  {
+    "id": "samsung-990pro-1tb",
+    "name": "三星 990 PRO NVMe M.2 1TB",
+    "category": "SSD",
+    "zol_url": "/solid_state_drive/index1425885.shtml",
+    "note": "PCIe 4.0旗舰"
+  },
+  {
+    "id": "wd-sn850x-1tb",
+    "name": "WD SN850X 1TB",
+    "category": "SSD",
+    "zol_url": "/solid_state_drive/index1427476.shtml",
+    "note": ""
+  },
+  {
+    "id": "zhitai-tiplus7100",
+    "name": "致态 TiPlus7100",
+    "category": "SSD",
+    "zol_url": "/solid_state_drive/index1432186.shtml",
+    "note": "国产长江存储"
+  },
+  {
+    "id": "asus-tuf-b850m",
+    "name": "华硕 TUF GAMING B850M-PLUS WIFI",
+    "category": "MB",
+    "zol_url": "/motherboard/index2118288.shtml",
+    "note": "AM5"
+  },
+  {
+    "id": "gigabyte-b650m",
+    "name": "技嘉 B650M GAMING WIFI",
+    "category": "MB",
+    "zol_url": "/motherboard/index2106519.shtml",
+    "note": "AM5性价比"
+  },
+  {
+    "id": "asus-tuf-b760m",
+    "name": "华硕 TUF GAMING B760M-PLUS D4",
+    "category": "MB",
+    "zol_url": "/motherboard/index1440076.shtml",
+    "note": "LGA1700"
+  }
+]

@@ -1,0 +1,68 @@
+# GitHub Actions - 硬件价格追踪
+# 每周二、周五 北京时间 00:00 自动运行
+
+name: Update Hardware Prices
+
+on:
+  schedule:
+    # 北京时间 周二 00:00 = UTC 周一 16:00
+    # 北京时间 周五 00:00 = UTC 周四 16:00
+    - cron: "0 16 * * 1,4"
+  workflow_dispatch:  # 支持手动触发
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraper
+        run: python scraper/main.py
+
+      - name: Commit and push data
+        run: |
+          git config user.name "hw-bot"
+          git config user.email "bot@hw-price-tracker.local"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "update: $(TZ=Asia/Shanghai date +%Y-%m-%d) price data"
+            git push
+          fi
+
+  deploy:
+    needs: scrape
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./web
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
