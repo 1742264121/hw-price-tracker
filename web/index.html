@@ -111,7 +111,7 @@
   async function loadAllData() {
     try {
       // 加载产品清单
-      const pResp = await fetch('../products.json');
+      const pResp = await fetch('./products.json');
       products = await pResp.json();
 
       // 加载所有月份的数据文件
@@ -133,7 +133,7 @@
 
       for (const month of months.slice(0, 12)) {
         try {
-          const resp = await fetch(`../data/${month}.json`);
+          const resp = await fetch(`./data/${month}.json`);
           if (!resp.ok) continue;
           const json = await resp.json();
           allData.push(...json.records);

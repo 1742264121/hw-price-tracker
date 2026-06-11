@@ -58,6 +58,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Copy data files into web/
+        run: |
+          cp products.json web/
+          cp -r data web/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
