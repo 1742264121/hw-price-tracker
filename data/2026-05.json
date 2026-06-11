@@ -1,14 +1,15 @@
 {
-  "month": "2026-06",
+  "month": "2026-05",
+  "source_note": "模拟数据 — 仅供项目功能验证，非真实采集价格",
   "records": [
     {
-      "date": "2026-05-30",
+      "date": "2026-05-16",
       "source": "simulated",
       "prices": [
         {
           "id": "rtx5070",
           "name": "NVIDIA RTX 5070",
-          "zol_price": 4560,
+          "zol_price": 4480,
           "jd_price": null,
           "tmall_price": null,
           "error": false
@@ -16,15 +17,15 @@
         {
           "id": "rtx5060ti-gigabyte",
           "name": "技嘉GeForce RTX 5060 Ti GAMING OC 16G",
-          "zol_price": 4010,
-          "jd_price": 4600,
+          "zol_price": 3860,
+          "jd_price": 4410,
           "tmall_price": null,
           "error": false
         },
         {
           "id": "rtx5090",
           "name": "NVIDIA RTX 5090",
-          "zol_price": 24430,
+          "zol_price": 23780,
           "jd_price": null,
           "tmall_price": null,
           "error": false
@@ -33,7 +34,7 @@
           "id": "r7-9800x3d",
           "name": "AMD Ryzen 7 9800X3D",
           "zol_price": 3800,
-          "jd_price": 3280,
+          "jd_price": 3320,
           "tmall_price": null,
           "error": false
         },
@@ -41,7 +42,7 @@
           "id": "i5-14600kf",
           "name": "Intel 酷睿 i5 14600KF",
           "zol_price": 2500,
-          "jd_price": 1650,
+          "jd_price": 1660,
           "tmall_price": null,
           "error": false
         },
@@ -49,7 +50,7 @@
           "id": "i7-14700k",
           "name": "Intel 酷睿 i7 14700K",
           "zol_price": 3500,
-          "jd_price": 2670,
+          "jd_price": 2760,
           "tmall_price": null,
           "error": false
         },
@@ -80,7 +81,243 @@
         {
           "id": "wd-sn850x-1tb",
           "name": "西部数据WD_BLACK SN850X 1TB",
-          "zol_price": 660,
+          "zol_price": 680,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "zhitai-tiplus7100",
+          "name": "致态TiPlus7100（512GB）",
+          "zol_price": 370,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "asus-tuf-b850m",
+          "name": "华硕TUF GAMING B850M-PLUS WIFI",
+          "zol_price": 1300,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "gigabyte-b650m",
+          "name": "技嘉B650M GAMING WIFI",
+          "zol_price": 680,
+          "jd_price": 680,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "asus-tuf-b760m",
+          "name": "华硕TUF GAMING B760M-PLUS D4重炮手",
+          "zol_price": 1160,
+          "jd_price": 1160,
+          "tmall_price": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19",
+      "source": "simulated",
+      "prices": [
+        {
+          "id": "rtx5070",
+          "name": "NVIDIA RTX 5070",
+          "zol_price": 4530,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "rtx5060ti-gigabyte",
+          "name": "技嘉GeForce RTX 5060 Ti GAMING OC 16G",
+          "zol_price": 3990,
+          "jd_price": 4570,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "rtx5090",
+          "name": "NVIDIA RTX 5090",
+          "zol_price": 23820,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "r7-9800x3d",
+          "name": "AMD Ryzen 7 9800X3D",
+          "zol_price": 3800,
+          "jd_price": 3320,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "i5-14600kf",
+          "name": "Intel 酷睿 i5 14600KF",
+          "zol_price": 2500,
+          "jd_price": 1620,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "i7-14700k",
+          "name": "Intel 酷睿 i7 14700K",
+          "zol_price": 3500,
+          "jd_price": 2810,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "ddr5-6000-32g-kingston",
+          "name": "金士顿叛逆者Renegade 32GB DDR5 6000",
+          "zol_price": 480,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "ddr5-6000-32g-gskill",
+          "name": "芝奇幻锋戟 32GB DDR5 6000",
+          "zol_price": 900,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "samsung-990pro-1tb",
+          "name": "三星990 PRO NVMe M.2（1TB）",
+          "zol_price": 1150,
+          "jd_price": 1940,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "wd-sn850x-1tb",
+          "name": "西部数据WD_BLACK SN850X 1TB",
+          "zol_price": 670,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "zhitai-tiplus7100",
+          "name": "致态TiPlus7100（512GB）",
+          "zol_price": 370,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "asus-tuf-b850m",
+          "name": "华硕TUF GAMING B850M-PLUS WIFI",
+          "zol_price": 1300,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "gigabyte-b650m",
+          "name": "技嘉B650M GAMING WIFI",
+          "zol_price": 680,
+          "jd_price": 680,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "asus-tuf-b760m",
+          "name": "华硕TUF GAMING B760M-PLUS D4重炮手",
+          "zol_price": 1160,
+          "jd_price": 1160,
+          "tmall_price": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-23",
+      "source": "simulated",
+      "prices": [
+        {
+          "id": "rtx5070",
+          "name": "NVIDIA RTX 5070",
+          "zol_price": 4540,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "rtx5060ti-gigabyte",
+          "name": "技嘉GeForce RTX 5060 Ti GAMING OC 16G",
+          "zol_price": 3920,
+          "jd_price": 4480,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "rtx5090",
+          "name": "NVIDIA RTX 5090",
+          "zol_price": 23970,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "r7-9800x3d",
+          "name": "AMD Ryzen 7 9800X3D",
+          "zol_price": 3800,
+          "jd_price": 3260,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "i5-14600kf",
+          "name": "Intel 酷睿 i5 14600KF",
+          "zol_price": 2500,
+          "jd_price": 1620,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "i7-14700k",
+          "name": "Intel 酷睿 i7 14700K",
+          "zol_price": 3500,
+          "jd_price": 2760,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "ddr5-6000-32g-kingston",
+          "name": "金士顿叛逆者Renegade 32GB DDR5 6000",
+          "zol_price": 480,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "ddr5-6000-32g-gskill",
+          "name": "芝奇幻锋戟 32GB DDR5 6000",
+          "zol_price": 900,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "samsung-990pro-1tb",
+          "name": "三星990 PRO NVMe M.2（1TB）",
+          "zol_price": 1130,
+          "jd_price": 1900,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "wd-sn850x-1tb",
+          "name": "西部数据WD_BLACK SN850X 1TB",
+          "zol_price": 680,
           "jd_price": null,
           "tmall_price": null,
           "error": false
@@ -120,13 +357,13 @@
       ]
     },
     {
-      "date": "2026-06-02",
+      "date": "2026-05-27",
       "source": "simulated",
       "prices": [
         {
           "id": "rtx5070",
           "name": "NVIDIA RTX 5070",
-          "zol_price": 4510,
+          "zol_price": 4600,
           "jd_price": null,
           "tmall_price": null,
           "error": false
@@ -134,15 +371,15 @@
         {
           "id": "rtx5060ti-gigabyte",
           "name": "技嘉GeForce RTX 5060 Ti GAMING OC 16G",
-          "zol_price": 4110,
-          "jd_price": 4720,
+          "zol_price": 4040,
+          "jd_price": 4630,
           "tmall_price": null,
           "error": false
         },
         {
           "id": "rtx5090",
           "name": "NVIDIA RTX 5090",
-          "zol_price": 24340,
+          "zol_price": 24250,
           "jd_price": null,
           "tmall_price": null,
           "error": false
@@ -151,7 +388,7 @@
           "id": "r7-9800x3d",
           "name": "AMD Ryzen 7 9800X3D",
           "zol_price": 3800,
-          "jd_price": 3290,
+          "jd_price": 3330,
           "tmall_price": null,
           "error": false
         },
@@ -159,7 +396,7 @@
           "id": "i5-14600kf",
           "name": "Intel 酷睿 i5 14600KF",
           "zol_price": 2500,
-          "jd_price": 1600,
+          "jd_price": 1610,
           "tmall_price": null,
           "error": false
         },
@@ -167,7 +404,7 @@
           "id": "i7-14700k",
           "name": "Intel 酷睿 i7 14700K",
           "zol_price": 3500,
-          "jd_price": 2720,
+          "jd_price": 2710,
           "tmall_price": null,
           "error": false
         },
@@ -190,8 +427,8 @@
         {
           "id": "samsung-990pro-1tb",
           "name": "三星990 PRO NVMe M.2（1TB）",
-          "zol_price": 1110,
-          "jd_price": 1860,
+          "zol_price": 1140,
+          "jd_price": 1920,
           "tmall_price": null,
           "error": false
         },
@@ -236,243 +473,6 @@
           "error": false
         }
       ]
-    },
-    {
-      "date": "2026-06-06",
-      "source": "simulated",
-      "prices": [
-        {
-          "id": "rtx5070",
-          "name": "NVIDIA RTX 5070",
-          "zol_price": 4640,
-          "jd_price": null,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "rtx5060ti-gigabyte",
-          "name": "技嘉GeForce RTX 5060 Ti GAMING OC 16G",
-          "zol_price": 4110,
-          "jd_price": 4720,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "rtx5090",
-          "name": "NVIDIA RTX 5090",
-          "zol_price": 24410,
-          "jd_price": null,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "r7-9800x3d",
-          "name": "AMD Ryzen 7 9800X3D",
-          "zol_price": 3800,
-          "jd_price": 3260,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "i5-14600kf",
-          "name": "Intel 酷睿 i5 14600KF",
-          "zol_price": 2500,
-          "jd_price": 1600,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "i7-14700k",
-          "name": "Intel 酷睿 i7 14700K",
-          "zol_price": 3500,
-          "jd_price": 2750,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "ddr5-6000-32g-kingston",
-          "name": "金士顿叛逆者Renegade 32GB DDR5 6000",
-          "zol_price": 480,
-          "jd_price": null,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "ddr5-6000-32g-gskill",
-          "name": "芝奇幻锋戟 32GB DDR5 6000",
-          "zol_price": 900,
-          "jd_price": null,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "samsung-990pro-1tb",
-          "name": "三星990 PRO NVMe M.2（1TB）",
-          "zol_price": 1120,
-          "jd_price": 1890,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "wd-sn850x-1tb",
-          "name": "西部数据WD_BLACK SN850X 1TB",
-          "zol_price": 650,
-          "jd_price": null,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "zhitai-tiplus7100",
-          "name": "致态TiPlus7100（512GB）",
-          "zol_price": 360,
-          "jd_price": null,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "asus-tuf-b850m",
-          "name": "华硕TUF GAMING B850M-PLUS WIFI",
-          "zol_price": 1300,
-          "jd_price": null,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "gigabyte-b650m",
-          "name": "技嘉B650M GAMING WIFI",
-          "zol_price": 680,
-          "jd_price": 680,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "asus-tuf-b760m",
-          "name": "华硕TUF GAMING B760M-PLUS D4重炮手",
-          "zol_price": 1160,
-          "jd_price": 1160,
-          "tmall_price": null,
-          "error": false
-        }
-      ]
-    },
-    {
-      "date": "2026-06-11",
-      "prices": [
-        {
-          "id": "rtx5070",
-          "name": "NVIDIA RTX 5070",
-          "zol_price": 4599,
-          "jd_price": null,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "rtx5060ti-gigabyte",
-          "name": "技嘉GeForce RTX 5060 Ti GAMING OC 16G",
-          "zol_price": 4099,
-          "jd_price": 4699,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "rtx5090",
-          "name": "NVIDIA RTX 5090",
-          "zol_price": 24399,
-          "jd_price": null,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "r7-9800x3d",
-          "name": "AMD Ryzen 7 9800X3D",
-          "zol_price": 3799,
-          "jd_price": 3299,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "i5-14600kf",
-          "name": "Intel 酷睿 i5 14600KF",
-          "zol_price": 2499,
-          "jd_price": 1619,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "i7-14700k",
-          "name": "Intel 酷睿 i7 14700K",
-          "zol_price": 3499,
-          "jd_price": 2699,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "ddr5-6000-32g-kingston",
-          "name": "金士顿叛逆者Renegade 32GB(16G*2) DDR5 6000 灯条RGB白",
-          "zol_price": 479,
-          "jd_price": null,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "ddr5-6000-32g-gskill",
-          "name": "芝奇幻锋戟 32GB（2×16GB）DDR5 6000",
-          "zol_price": 899,
-          "jd_price": null,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "samsung-990pro-1tb",
-          "name": "三星990 PRO NVMe M.2（1TB）",
-          "zol_price": 1099,
-          "jd_price": 1849,
-          "tmall_price": 1919,
-          "error": false
-        },
-        {
-          "id": "wd-sn850x-1tb",
-          "name": "西部数据WD_BLACK SN850X 1TB",
-          "zol_price": 659,
-          "jd_price": null,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "zhitai-tiplus7100",
-          "name": "致态TiPlus7100（512GB）",
-          "zol_price": 359,
-          "jd_price": null,
-          "tmall_price": 1198,
-          "error": false
-        },
-        {
-          "id": "asus-tuf-b850m",
-          "name": "华硕TUF GAMING B850M-PLUS WIFI",
-          "zol_price": 1299,
-          "jd_price": null,
-          "tmall_price": null,
-          "error": false
-        },
-        {
-          "id": "gigabyte-b650m",
-          "name": "技嘉B650M GAMING WIFI",
-          "zol_price": 679,
-          "jd_price": 679,
-          "tmall_price": 699,
-          "error": false
-        },
-        {
-          "id": "asus-tuf-b760m",
-          "name": "华硕TUF GAMING B760M-PLUS D4重炮手",
-          "zol_price": 1159,
-          "jd_price": 1159,
-          "tmall_price": null,
-          "error": false
-        }
-      ],
-      "source": "scraped"
     }
-  ],
-  "source_note": "混合数据 — 标注为 simulated 的为模拟；scraped 为真实采集 [基准日期: 2026-06-11]"
+  ]
 }
