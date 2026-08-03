@@ -1,0 +1,122 @@
+{
+  "month": "2026-08",
+  "records": [
+    {
+      "date": "2026-08-04",
+      "prices": [
+        {
+          "id": "rtx5070",
+          "name": "NVIDIA RTX 5070",
+          "zol_price": 4599,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "rtx5060ti-gigabyte",
+          "name": "技嘉GeForce RTX 5060 Ti GAMING OC 16G",
+          "zol_price": 4099,
+          "jd_price": 4699,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "rtx5090",
+          "name": "NVIDIA RTX 5090",
+          "zol_price": 24399,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "r7-9800x3d",
+          "name": "AMD Ryzen 7 9800X3D",
+          "zol_price": 3799,
+          "jd_price": 3299,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "i5-14600kf",
+          "name": "Intel 酷睿 i5 14600KF",
+          "zol_price": 2499,
+          "jd_price": 1619,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "i7-14700k",
+          "name": "Intel 酷睿 i7 14700K",
+          "zol_price": 3499,
+          "jd_price": 3049,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "ddr5-6000-32g-kingston",
+          "name": "金士顿叛逆者Renegade 32GB(16G*2) DDR5 6000 灯条RGB白",
+          "zol_price": 479,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "ddr5-6000-32g-gskill",
+          "name": "芝奇幻锋戟 32GB（2×16GB）DDR5 6000",
+          "zol_price": 899,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "samsung-990pro-1tb",
+          "name": "三星990 PRO NVMe M.2（1TB）",
+          "zol_price": 1099,
+          "jd_price": 1849,
+          "tmall_price": 2099,
+          "error": false
+        },
+        {
+          "id": "wd-sn850x-1tb",
+          "name": "西部数据WD_BLACK SN850X 1TB",
+          "zol_price": 659,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": false
+        },
+        {
+          "id": "zhitai-tiplus7100",
+          "name": "致态TiPlus7100（512GB）",
+          "zol_price": 359,
+          "jd_price": null,
+          "tmall_price": 498,
+          "error": false
+        },
+        {
+          "id": "asus-tuf-b850m",
+          "name": "华硕TUF GAMING B850M-PLUS WIFI",
+          "zol_price": 1399,
+          "jd_price": null,
+          "tmall_price": 3109,
+          "error": false
+        },
+        {
+          "id": "gigabyte-b650m",
+          "name": "技嘉B650M GAMING WIFI",
+          "zol_price": 679,
+          "jd_price": 679,
+          "tmall_price": 699,
+          "error": false
+        },
+        {
+          "id": "asus-tuf-b760m",
+          "name": "华硕TUF GAMING B760M-PLUS D4重炮手",
+          "zol_price": 1159,
+          "jd_price": 1159,
+          "tmall_price": null,
+          "error": false
+        }
+      ]
+    }
+  ]
+}
