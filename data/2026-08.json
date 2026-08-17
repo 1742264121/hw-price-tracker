@@ -351,6 +351,123 @@
           "error": true
         }
       ]
+    },
+    {
+      "date": "2026-08-18",
+      "prices": [
+        {
+          "id": "rtx5070",
+          "name": "NVIDIA RTX 5070",
+          "zol_price": null,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": true
+        },
+        {
+          "id": "rtx5060ti-gigabyte",
+          "name": "技嘉 RTX 5060 Ti GAMING OC 16G",
+          "zol_price": null,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": true
+        },
+        {
+          "id": "rtx5090",
+          "name": "NVIDIA RTX 5090",
+          "zol_price": null,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": true
+        },
+        {
+          "id": "r7-9800x3d",
+          "name": "AMD Ryzen 7 9800X3D",
+          "zol_price": null,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": true
+        },
+        {
+          "id": "i5-14600kf",
+          "name": "Intel 酷睿 i5-14600KF",
+          "zol_price": null,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": true
+        },
+        {
+          "id": "i7-14700k",
+          "name": "Intel 酷睿 i7-14700K",
+          "zol_price": null,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": true
+        },
+        {
+          "id": "ddr5-6000-32g-kingston",
+          "name": "金士顿 Renegade 32GB(16G*2) DDR5 6000",
+          "zol_price": null,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": true
+        },
+        {
+          "id": "ddr5-6000-32g-gskill",
+          "name": "芝奇 幻锋戟 32GB(2x16GB) DDR5 6000",
+          "zol_price": null,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": true
+        },
+        {
+          "id": "samsung-990pro-1tb",
+          "name": "三星 990 PRO NVMe M.2 1TB",
+          "zol_price": null,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": true
+        },
+        {
+          "id": "wd-sn850x-1tb",
+          "name": "WD SN850X 1TB",
+          "zol_price": null,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": true
+        },
+        {
+          "id": "zhitai-tiplus7100",
+          "name": "致态 TiPlus7100",
+          "zol_price": null,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": true
+        },
+        {
+          "id": "asus-tuf-b850m",
+          "name": "华硕 TUF GAMING B850M-PLUS WIFI",
+          "zol_price": null,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": true
+        },
+        {
+          "id": "gigabyte-b650m",
+          "name": "技嘉 B650M GAMING WIFI",
+          "zol_price": null,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": true
+        },
+        {
+          "id": "asus-tuf-b760m",
+          "name": "华硕 TUF GAMING B760M-PLUS D4",
+          "zol_price": null,
+          "jd_price": null,
+          "tmall_price": null,
+          "error": true
+        }
+      ]
     }
   ]
 }
